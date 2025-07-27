@@ -16,7 +16,7 @@ final commentRepositoryProvider = Provider<CommentsRepository>(
 );
 
 abstract interface class CommentsRepository {
-  EitherFailureOr<List<Comment>> getComments();
+  EitherFailureOr<List<Comment>> getComments({int limit = 20, int start = 0});
 }
 
 class CommentsRepositoryImpl implements CommentsRepository {
@@ -24,11 +24,20 @@ class CommentsRepositoryImpl implements CommentsRepository {
 
   final ApiClient _apiClient;
   final EntityMapper<Comment, CommentResponse> _commentMapper;
+
   @override
-  EitherFailureOr<List<Comment>> getComments() async {
+  EitherFailureOr<List<Comment>> getComments({
+    int limit = 20,
+    int start = 0,
+  }) async {
     try {
       final comments = <Comment>[];
-      final commentResponseList = await _apiClient.getComments(10);
+
+      final commentResponseList = await _apiClient.getComments(
+        limit,
+        start: start,
+      );
+
       for (var commentResponse in commentResponseList) {
         final comment = _commentMapper(commentResponse);
         comments.add(comment);

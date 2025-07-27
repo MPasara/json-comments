@@ -18,9 +18,12 @@ class _ApiClient implements ApiClient {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<List<CommentResponse>> getComments(int offset) async {
+  Future<List<CommentResponse>> getComments(int limit, {int start = 0}) async {
     final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{
+      r'_limit': limit,
+      r'_start': start,
+    };
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
     final _options = _setStreamType<List<CommentResponse>>(

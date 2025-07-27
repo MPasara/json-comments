@@ -10,5 +10,8 @@ abstract class ApiClient {
   factory ApiClient(Dio dio) = _ApiClient;
 
   @GET(ApiPathConstants.comments)
-  Future<List<CommentResponse>> getComments(int offset);
+  Future<List<CommentResponse>> getComments(
+    @Query('_limit') int limit, {
+    @Query('_start') int start = 0,
+  });
 }

@@ -11,7 +11,11 @@ sealed class CommentsState extends Equatable {
 
   const factory CommentsState.empty() = CommentsEmpty;
 
-  const factory CommentsState.data(List<Comment> data) = CommentsData;
+  const factory CommentsState.data(
+    List<Comment> data, {
+    bool hasReachedMax,
+    bool isLoadingMore,
+  }) = CommentsData;
 
   const factory CommentsState.error(Failure failure) = CommentsError;
 }
@@ -38,12 +42,30 @@ final class CommentsEmpty extends CommentsState {
 }
 
 final class CommentsData extends CommentsState {
-  const CommentsData(this.data);
+  const CommentsData(
+    this.data, {
+    this.hasReachedMax = false,
+    this.isLoadingMore = false,
+  });
 
   final List<Comment> data;
+  final bool hasReachedMax;
+  final bool isLoadingMore;
 
   @override
-  List<Object?> get props => [data];
+  List<Object?> get props => [data, hasReachedMax, isLoadingMore];
+
+  CommentsData copyWith({
+    List<Comment>? data,
+    bool? hasReachedMax,
+    bool? isLoadingMore,
+  }) {
+    return CommentsData(
+      data ?? this.data,
+      hasReachedMax: hasReachedMax ?? this.hasReachedMax,
+      isLoadingMore: isLoadingMore ?? this.isLoadingMore,
+    );
+  }
 }
 
 final class CommentsError extends CommentsState {
