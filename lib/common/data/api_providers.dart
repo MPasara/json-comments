@@ -10,7 +10,12 @@ final apiClientProvider = Provider<ApiClient>(
 );
 
 final dioProvider = Provider.family<Dio, String>((ref, baseUrl) {
-  final dio = Dio(BaseOptions(baseUrl: baseUrl));
+  final dio = Dio(
+    BaseOptions(
+      baseUrl: baseUrl,
+      headers: {'Referer': 'https://jsonplaceholder.typicode.com/'},
+    ),
+  );
   dio.interceptors.addAll([
     LoggyDioInterceptor(requestBody: true, requestHeader: true),
   ]);
