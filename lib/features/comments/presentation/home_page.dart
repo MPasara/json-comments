@@ -36,7 +36,7 @@ class _MyHomePageState extends ConsumerState<HomePage> {
           CommentsListWidget(
             hasReachedMax: hasReachedMax,
             isLoadingMore: isLoadingMore,
-            data: data,
+            comments: data,
           ),
       },
     );

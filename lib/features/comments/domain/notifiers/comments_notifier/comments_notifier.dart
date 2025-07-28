@@ -78,7 +78,7 @@ class CommentsNotifier extends Notifier<CommentsState> {
         (failure) {
           // Reset loading state on error
           state = currentState.copyWith(isLoadingMore: false);
-          // You might want to show a snackbar or toast here
+          //toast goes here
         },
         (newComments) {
           final allComments = [...currentState.data, ...newComments];
