@@ -21,6 +21,10 @@ version: 1.0.0+1
 environment:
   sdk: ^3.8.1
 
+flutter_intl:
+  main_locale: en
+  enabled: true
+
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
 # consider running `flutter pub upgrade --major-versions`. Alternatively,
@@ -45,6 +49,10 @@ dependencies:
   either_dart: ^1.0.0
   flutter_loggy: ^2.0.3+1
   url_launcher: ^6.3.2
+  intl: ^0.20.2
+  intl_utils: ^2.8.11
+  flutter_localizations:
+    sdk: flutter
 
 dev_dependencies:
   flutter_test:

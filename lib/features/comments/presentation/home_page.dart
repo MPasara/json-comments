@@ -3,6 +3,7 @@ import 'package:comments/features/comments/domain/notifiers/comments_notifier/co
 import 'package:comments/features/comments/presentation/widgets/comments_empty.dart';
 import 'package:comments/features/comments/presentation/widgets/comments_error.dart';
 import 'package:comments/features/comments/presentation/widgets/comments_list.dart';
+import 'package:comments/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -22,7 +23,7 @@ class _MyHomePageState extends ConsumerState<HomePage> {
       backgroundColor: Color.fromARGB(255, 240, 239, 239),
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text('Comments'),
+        title: Text(S.of(context).comments),
         centerTitle: true,
       ),
       body: switch (state) {

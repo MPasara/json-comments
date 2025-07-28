@@ -1,0 +1,12 @@
+{
+    "@@locale": "hr",
+     "unknown_error_occurred": "Došlo je do nepoznate greške",
+    "comments" : "Komentari",
+    "name" : "Ime",
+    "comment" : "Komentar",
+    "contact" : "Kontaktiraj",
+    "id" : "ID",
+    "try_again" : "Pokušajte ponovno",
+    "get_comments_failed" : "Dohvaćanje komentara nije uspjelo...",
+    "comment_list_empty" : "Izgelda da je lista prazna"
+}

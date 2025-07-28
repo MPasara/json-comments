@@ -1,4 +1,5 @@
 import 'package:comments/features/comments/domain/entities/comment.dart';
+import 'package:comments/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -42,7 +43,7 @@ class CommentsListTile extends StatelessWidget {
           style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
         ),
         subtitle: Text(
-          'ID: ${comment.id}',
+          '${S.of(context).id} ${comment.id}',
           style: const TextStyle(color: Colors.grey, fontSize: 14),
         ),
         children: [
@@ -52,7 +53,7 @@ class CommentsListTile extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Name:',
+                  S.of(context).name,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Theme.of(context).colorScheme.primary,
@@ -63,7 +64,7 @@ class CommentsListTile extends StatelessWidget {
                 Text(comment.name, style: const TextStyle(fontSize: 16)),
                 const SizedBox(height: 16),
                 Text(
-                  'Comment:',
+                  S.of(context).comment,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Theme.of(context).colorScheme.primary,
@@ -82,7 +83,7 @@ class CommentsListTile extends StatelessWidget {
                         final email = comment.email;
                         launchEmail(email);
                       },
-                      child: const Text('Contact'),
+                      child: Text(S.of(context).contact),
                     ),
                   ],
                 ),

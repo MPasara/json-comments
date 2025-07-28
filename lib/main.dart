@@ -1,8 +1,10 @@
 import 'package:comments/common/utils/custom_provider_observer.dart';
 import 'package:comments/common/utils/disabled_printer.dart';
 import 'package:comments/features/comments/presentation/home_page.dart';
+import 'package:comments/generated/l10n.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_loggy/flutter_loggy.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:loggy/loggy.dart';
@@ -28,6 +30,12 @@ class CommentsApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      locale: Locale('hr'),
+      supportedLocales: const [Locale('en'), Locale('hr')],
+      localizationsDelegates: [
+        S.delegate,
+        ...GlobalMaterialLocalizations.delegates,
+      ],
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.purple),
       ),
@@ -46,7 +54,10 @@ void _registerErrorHandlers() {
     return true;
   };
   ErrorWidget.builder = (FlutterErrorDetails details) => Scaffold(
-    appBar: AppBar(backgroundColor: Colors.red, title: const Text('Error')),
+    appBar: AppBar(
+      backgroundColor: Colors.red,
+      title: Text(S.current.unknown_error_occurred),
+    ),
     body: Center(child: Text(details.toString())),
   );
 }
