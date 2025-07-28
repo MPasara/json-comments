@@ -1,8 +1,12 @@
+import 'package:comments/common/domain/notifiers/locale_notifier.dart';
+import 'package:comments/common/utils/constants/locale_constants.dart';
 import 'package:comments/common/utils/custom_provider_observer.dart';
 import 'package:comments/common/utils/disabled_printer.dart';
 import 'package:comments/features/comments/presentation/home_page.dart';
+import 'package:comments/generated/l10n.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_loggy/flutter_loggy.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:loggy/loggy.dart';
@@ -22,12 +26,24 @@ void main() {
   );
 }
 
-class CommentsApp extends StatelessWidget {
+class CommentsApp extends ConsumerWidget {
   const CommentsApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final selectedLocale = ref.watch(localeNotifierProvider);
     return MaterialApp(
+      locale: selectedLocale,
+      supportedLocales: [
+        Locale(LocaleConstants.eng),
+        Locale(LocaleConstants.cro),
+        Locale(LocaleConstants.esp),
+        Locale(LocaleConstants.fr),
+      ],
+      localizationsDelegates: [
+        S.delegate,
+        ...GlobalMaterialLocalizations.delegates,
+      ],
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.purple),
       ),
@@ -46,7 +62,10 @@ void _registerErrorHandlers() {
     return true;
   };
   ErrorWidget.builder = (FlutterErrorDetails details) => Scaffold(
-    appBar: AppBar(backgroundColor: Colors.red, title: const Text('Error')),
+    appBar: AppBar(
+      backgroundColor: Colors.red,
+      title: Text(S.current.unknown_error_occurred),
+    ),
     body: Center(child: Text(details.toString())),
   );
 }

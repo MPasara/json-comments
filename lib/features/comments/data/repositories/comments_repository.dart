@@ -1,8 +1,11 @@
 import 'package:comments/common/data/api_client.dart';
 import 'package:comments/common/data/api_providers.dart';
 import 'package:comments/common/domain/failure.dart';
+import 'package:comments/common/utils/either.dart';
+import 'package:comments/features/comments/data/mappers/comment_entity_mapper.dart';
 import 'package:comments/features/comments/data/models/comment_response.dart';
 import 'package:comments/features/comments/domain/entities/comment.dart';
+import 'package:comments/generated/l10n.dart';
 import 'package:either_dart/either.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:loggy/loggy.dart';
@@ -48,24 +51,8 @@ class CommentsRepositoryImpl implements CommentsRepository {
       logDebug(e.toString());
       logDebug(st.toString());
       return Left(
-        Failure(title: 'Get comments failed...', error: e, stackTrace: st),
+        Failure(title: S.current.get_comments_failed, error: e, stackTrace: st),
       );
     }
   }
 }
-
-typedef EitherFailureOr<T> = Future<Either<Failure, T>>;
-typedef EntityMapper<Entity, Response> = Entity Function(Response);
-
-final commentEntityMapperProvider =
-    Provider<EntityMapper<Comment, CommentResponse>>(
-      (ref) => (response) {
-        return Comment(
-          postId: response.postId,
-          id: response.id,
-          name: response.name,
-          email: response.email,
-          body: response.body,
-        );
-      },
-    );
