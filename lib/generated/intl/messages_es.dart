@@ -1,5 +1,5 @@
 // DO NOT EDIT. This is code generated via package:intl/generate_localized.dart
-// This is a library that provides messages for a hr locale. All the
+// This is a library that provides messages for a es locale. All the
 // messages from the main program should be duplicated here with the same
 // function name.
 
@@ -18,37 +18,35 @@ final messages = new MessageLookup();
 typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 
 class MessageLookup extends MessageLookupByLibrary {
-  String get localeName => 'hr';
+  String get localeName => 'es';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-    "change_language": MessageLookupByLibrary.simpleMessage(
-      "Promijeni jezik: ",
-    ),
-    "comment": MessageLookupByLibrary.simpleMessage("Komentar"),
+    "change_language": MessageLookupByLibrary.simpleMessage("Cambiar idioma: "),
+    "comment": MessageLookupByLibrary.simpleMessage("Comentario"),
     "comment_list_empty": MessageLookupByLibrary.simpleMessage(
-      "Izgelda da je lista prazna",
+      "La lista parece estar vacía",
     ),
-    "comments": MessageLookupByLibrary.simpleMessage("Komentari"),
-    "contact": MessageLookupByLibrary.simpleMessage("Kontaktiraj"),
-    "croatian": MessageLookupByLibrary.simpleMessage("Hrvatski"),
-    "english": MessageLookupByLibrary.simpleMessage("Engleski"),
+    "comments": MessageLookupByLibrary.simpleMessage("Comentarios"),
+    "contact": MessageLookupByLibrary.simpleMessage("Contacto"),
+    "croatian": MessageLookupByLibrary.simpleMessage("Croata"),
+    "english": MessageLookupByLibrary.simpleMessage("Inglés"),
     "fetch_language_failed": MessageLookupByLibrary.simpleMessage(
-      "Dohvaćanje jezika nije uspjelo",
+      "Error al obtener el idioma",
     ),
-    "french": MessageLookupByLibrary.simpleMessage("Francuski"),
+    "french": MessageLookupByLibrary.simpleMessage("Francés"),
     "get_comments_failed": MessageLookupByLibrary.simpleMessage(
-      "Dohvaćanje komentara nije uspjelo...",
+      "No se pudieron obtener los comentarios...",
     ),
     "id": MessageLookupByLibrary.simpleMessage("ID"),
-    "name": MessageLookupByLibrary.simpleMessage("Ime"),
+    "name": MessageLookupByLibrary.simpleMessage("Nombre"),
     "set_language_failed": MessageLookupByLibrary.simpleMessage(
-      "Postavljanje jezika nije uspjelo",
+      "Error al establecer el idioma",
     ),
-    "spanish": MessageLookupByLibrary.simpleMessage("Španjolski"),
-    "try_again": MessageLookupByLibrary.simpleMessage("Pokušajte ponovno"),
+    "spanish": MessageLookupByLibrary.simpleMessage("Español"),
+    "try_again": MessageLookupByLibrary.simpleMessage("Intentar de nuevo"),
     "unknown_error_occurred": MessageLookupByLibrary.simpleMessage(
-      "Došlo je do nepoznate greške",
+      "Ocurrió un error desconocido",
     ),
   };
 }

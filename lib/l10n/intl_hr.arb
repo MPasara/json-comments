@@ -8,5 +8,12 @@
     "id" : "ID",
     "try_again" : "Pokušajte ponovno",
     "get_comments_failed" : "Dohvaćanje komentara nije uspjelo...",
-    "comment_list_empty" : "Izgelda da je lista prazna"
+    "comment_list_empty" : "Izgelda da je lista prazna",
+    "fetch_language_failed" : "Dohvaćanje jezika nije uspjelo",
+    "set_language_failed" : "Postavljanje jezika nije uspjelo",
+    "english" : "Engleski",
+    "croatian" : "Hrvatski",
+    "spanish" : "Španjolski",
+    "french" : "Francuski",
+    "change_language": "Promijeni jezik: "
 }

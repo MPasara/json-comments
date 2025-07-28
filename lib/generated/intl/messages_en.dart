@@ -22,17 +22,30 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "change_language": MessageLookupByLibrary.simpleMessage(
+      "Change language: ",
+    ),
     "comment": MessageLookupByLibrary.simpleMessage("Comment"),
     "comment_list_empty": MessageLookupByLibrary.simpleMessage(
       "List appears to be empty",
     ),
     "comments": MessageLookupByLibrary.simpleMessage("Comments"),
     "contact": MessageLookupByLibrary.simpleMessage("Contact"),
+    "croatian": MessageLookupByLibrary.simpleMessage("Croatian"),
+    "english": MessageLookupByLibrary.simpleMessage("English"),
+    "fetch_language_failed": MessageLookupByLibrary.simpleMessage(
+      "Fetch language failed",
+    ),
+    "french": MessageLookupByLibrary.simpleMessage("French"),
     "get_comments_failed": MessageLookupByLibrary.simpleMessage(
       "Get comments failed...",
     ),
     "id": MessageLookupByLibrary.simpleMessage("ID"),
     "name": MessageLookupByLibrary.simpleMessage("Name"),
+    "set_language_failed": MessageLookupByLibrary.simpleMessage(
+      "Set language failed",
+    ),
+    "spanish": MessageLookupByLibrary.simpleMessage("Spanish"),
     "try_again": MessageLookupByLibrary.simpleMessage("Try again"),
     "unknown_error_occurred": MessageLookupByLibrary.simpleMessage(
       "Unknown error occurred",

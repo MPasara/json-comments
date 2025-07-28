@@ -8,5 +8,12 @@
     "id" : "ID",
     "try_again" : "Try again",
     "get_comments_failed" : "Get comments failed...",
-    "comment_list_empty" : "List appears to be empty"
+    "comment_list_empty" : "List appears to be empty",
+    "fetch_language_failed" : "Fetch language failed",
+    "set_language_failed" : "Set language failed",
+    "english" : "English",
+    "croatian" : "Croatian",
+    "spanish" : "Spanish",
+    "french" : "French",
+    "change_language": "Change language: "
 }

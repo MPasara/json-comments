@@ -1,6 +1,8 @@
 import 'package:comments/common/data/api_client.dart';
 import 'package:comments/common/data/api_providers.dart';
 import 'package:comments/common/domain/failure.dart';
+import 'package:comments/common/utils/either.dart';
+import 'package:comments/features/comments/data/mappers/comment_entity_mapper.dart';
 import 'package:comments/features/comments/data/models/comment_response.dart';
 import 'package:comments/features/comments/domain/entities/comment.dart';
 import 'package:comments/generated/l10n.dart';
@@ -54,19 +56,3 @@ class CommentsRepositoryImpl implements CommentsRepository {
     }
   }
 }
-
-typedef EitherFailureOr<T> = Future<Either<Failure, T>>;
-typedef EntityMapper<Entity, Response> = Entity Function(Response);
-
-final commentEntityMapperProvider =
-    Provider<EntityMapper<Comment, CommentResponse>>(
-      (ref) => (response) {
-        return Comment(
-          postId: response.postId,
-          id: response.id,
-          name: response.name,
-          email: response.email,
-          body: response.body,
-        );
-      },
-    );

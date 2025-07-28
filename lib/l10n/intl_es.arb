@@ -1,0 +1,19 @@
+{
+    "@@locale": "es",
+    "unknown_error_occurred": "Ocurrió un error desconocido",
+    "comments": "Comentarios",
+    "name": "Nombre",
+    "comment": "Comentario",
+    "contact": "Contacto",
+    "id": "ID",
+    "try_again": "Intentar de nuevo",
+    "get_comments_failed": "No se pudieron obtener los comentarios...",
+    "comment_list_empty": "La lista parece estar vacía",
+    "fetch_language_failed": "Error al obtener el idioma",
+    "set_language_failed": "Error al establecer el idioma",
+    "english": "Inglés",
+    "croatian": "Croata",
+    "spanish": "Español",
+    "french": "Francés",
+    "change_language": "Cambiar idioma: "
+}

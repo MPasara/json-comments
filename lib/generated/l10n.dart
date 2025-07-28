@@ -113,6 +113,56 @@ class S {
       args: [],
     );
   }
+
+  /// `Fetch language failed`
+  String get fetch_language_failed {
+    return Intl.message(
+      'Fetch language failed',
+      name: 'fetch_language_failed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Set language failed`
+  String get set_language_failed {
+    return Intl.message(
+      'Set language failed',
+      name: 'set_language_failed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `English`
+  String get english {
+    return Intl.message('English', name: 'english', desc: '', args: []);
+  }
+
+  /// `Croatian`
+  String get croatian {
+    return Intl.message('Croatian', name: 'croatian', desc: '', args: []);
+  }
+
+  /// `Spanish`
+  String get spanish {
+    return Intl.message('Spanish', name: 'spanish', desc: '', args: []);
+  }
+
+  /// `French`
+  String get french {
+    return Intl.message('French', name: 'french', desc: '', args: []);
+  }
+
+  /// `Change language: `
+  String get change_language {
+    return Intl.message(
+      'Change language: ',
+      name: 'change_language',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
@@ -121,6 +171,8 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   List<Locale> get supportedLocales {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
+      Locale.fromSubtags(languageCode: 'es'),
+      Locale.fromSubtags(languageCode: 'fr'),
       Locale.fromSubtags(languageCode: 'hr'),
     ];
   }

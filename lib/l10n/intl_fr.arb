@@ -1,0 +1,19 @@
+{
+    "@@locale": "fr",
+    "unknown_error_occurred": "Une erreur inconnue s'est produite",
+    "comments": "Commentaires",
+    "name": "Nom",
+    "comment": "Commentaire",
+    "contact": "Contact",
+    "id": "ID",
+    "try_again": "Réessayer",
+    "get_comments_failed": "Échec de la récupération des commentaires...",
+    "comment_list_empty": "La liste semble être vide",
+    "fetch_language_failed": "Échec de la récupération de la langue",
+    "set_language_failed": "Échec de la définition de la langue",
+    "english": "Anglais",
+    "croatian": "Croate",
+    "spanish": "Espagnol",
+    "french": "Français",
+    "change_language": "Changer de langue : "
+}

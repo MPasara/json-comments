@@ -1,3 +1,5 @@
+import 'package:comments/common/domain/notifiers/locale_notifier.dart';
+import 'package:comments/common/utils/constants/locale_constants.dart';
 import 'package:comments/common/utils/custom_provider_observer.dart';
 import 'package:comments/common/utils/disabled_printer.dart';
 import 'package:comments/features/comments/presentation/home_page.dart';
@@ -24,14 +26,20 @@ void main() {
   );
 }
 
-class CommentsApp extends StatelessWidget {
+class CommentsApp extends ConsumerWidget {
   const CommentsApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final selectedLocale = ref.watch(localeNotifierProvider);
     return MaterialApp(
-      locale: Locale('hr'),
-      supportedLocales: const [Locale('en'), Locale('hr')],
+      locale: selectedLocale,
+      supportedLocales: [
+        Locale(LocaleConstants.eng),
+        Locale(LocaleConstants.cro),
+        Locale(LocaleConstants.esp),
+        Locale(LocaleConstants.fr),
+      ],
       localizationsDelegates: [
         S.delegate,
         ...GlobalMaterialLocalizations.delegates,
