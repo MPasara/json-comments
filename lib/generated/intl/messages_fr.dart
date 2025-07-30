@@ -32,6 +32,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "comments": MessageLookupByLibrary.simpleMessage("Commentaires"),
     "contact": MessageLookupByLibrary.simpleMessage("Contact"),
     "croatian": MessageLookupByLibrary.simpleMessage("Croate"),
+    "dark": MessageLookupByLibrary.simpleMessage("Sombre"),
     "english": MessageLookupByLibrary.simpleMessage("Anglais"),
     "fetch_language_failed": MessageLookupByLibrary.simpleMessage(
       "Échec de la récupération de la langue",
@@ -41,11 +42,16 @@ class MessageLookup extends MessageLookupByLibrary {
       "Échec de la récupération des commentaires...",
     ),
     "id": MessageLookupByLibrary.simpleMessage("ID"),
+    "light": MessageLookupByLibrary.simpleMessage("Clair"),
     "name": MessageLookupByLibrary.simpleMessage("Nom"),
     "set_language_failed": MessageLookupByLibrary.simpleMessage(
       "Échec de la définition de la langue",
     ),
+    "set_theme_failed": MessageLookupByLibrary.simpleMessage(
+      "Échec de la définition du mode de thème",
+    ),
     "spanish": MessageLookupByLibrary.simpleMessage("Espagnol"),
+    "system": MessageLookupByLibrary.simpleMessage("Système"),
     "try_again": MessageLookupByLibrary.simpleMessage("Réessayer"),
     "unknown_error_occurred": MessageLookupByLibrary.simpleMessage(
       "Une erreur inconnue s\'est produite",

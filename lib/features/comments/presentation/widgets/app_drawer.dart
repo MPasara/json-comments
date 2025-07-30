@@ -1,5 +1,7 @@
 import 'package:comments/common/domain/notifiers/locale_notifier.dart';
+import 'package:comments/common/presentation/build_context_extensions.dart';
 import 'package:comments/common/presentation/image_assets.dart';
+import 'package:comments/common/presentation/widgets/theme_switcher_row.dart';
 import 'package:comments/common/utils/constants/locale_constants.dart';
 import 'package:comments/features/comments/presentation/widgets/app_drawer_tile.dart';
 import 'package:comments/generated/l10n.dart';
@@ -14,7 +16,7 @@ class AppDrawer extends ConsumerWidget {
     final selectedLocale = ref.watch(localeNotifierProvider);
     return Drawer(
       key: ValueKey(selectedLocale.languageCode),
-      backgroundColor: Color.fromARGB(255, 240, 239, 239),
+      backgroundColor: context.appColors.background,
       child: SafeArea(
         child: ListView(
           padding: EdgeInsets.zero,
@@ -66,6 +68,8 @@ class AppDrawer extends ConsumerWidget {
               tileText: S.of(context).french,
               selected: selectedLocale.languageCode == LocaleConstants.fr,
             ),
+            SizedBox(height: 40),
+            ThemeSwitcherRow(),
           ],
         ),
       ),

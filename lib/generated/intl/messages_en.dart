@@ -32,6 +32,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "comments": MessageLookupByLibrary.simpleMessage("Comments"),
     "contact": MessageLookupByLibrary.simpleMessage("Contact"),
     "croatian": MessageLookupByLibrary.simpleMessage("Croatian"),
+    "dark": MessageLookupByLibrary.simpleMessage("Dark"),
     "english": MessageLookupByLibrary.simpleMessage("English"),
     "fetch_language_failed": MessageLookupByLibrary.simpleMessage(
       "Fetch language failed",
@@ -41,11 +42,16 @@ class MessageLookup extends MessageLookupByLibrary {
       "Get comments failed...",
     ),
     "id": MessageLookupByLibrary.simpleMessage("ID"),
+    "light": MessageLookupByLibrary.simpleMessage("Light"),
     "name": MessageLookupByLibrary.simpleMessage("Name"),
     "set_language_failed": MessageLookupByLibrary.simpleMessage(
       "Set language failed",
     ),
+    "set_theme_failed": MessageLookupByLibrary.simpleMessage(
+      "Set theme mode failed",
+    ),
     "spanish": MessageLookupByLibrary.simpleMessage("Spanish"),
+    "system": MessageLookupByLibrary.simpleMessage("System"),
     "try_again": MessageLookupByLibrary.simpleMessage("Try again"),
     "unknown_error_occurred": MessageLookupByLibrary.simpleMessage(
       "Unknown error occurred",

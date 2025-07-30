@@ -1,6 +1,6 @@
 import 'package:comments/features/comments/domain/entities/comment.dart';
 import 'package:comments/features/comments/domain/notifiers/comments_notifier/comments_notifier.dart';
-import 'package:comments/features/comments/presentation/widgets/comments_list_tile.dart';
+import 'package:comments/features/comments/presentation/widgets/comment_list_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -36,6 +36,7 @@ class CommentsListWidget extends ConsumerWidget {
           thumbVisibility: true,
           trackVisibility: true,
           child: ListView.builder(
+            primary: false,
             physics: const AlwaysScrollableScrollPhysics(),
             itemCount: comments.length + (hasReachedMax ? 0 : 1),
             itemBuilder: (context, index) {
@@ -48,7 +49,7 @@ class CommentsListWidget extends ConsumerWidget {
               }
 
               final comment = comments[index];
-              return CommentsListTile(comment: comment);
+              return CommentListTile(comment: comment);
             },
           ),
         ),

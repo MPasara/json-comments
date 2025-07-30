@@ -15,5 +15,9 @@
     "croatian" : "Hrvatski",
     "spanish" : "Španjolski",
     "french" : "Francuski",
-    "change_language": "Promijeni jezik: "
+    "change_language": "Promijeni jezik: ",
+    "light": "Svijetlo",
+    "dark": "Tamno",
+    "system": "Sustav",
+    "set_theme_failed": "Postavljanje načina teme nije uspjelo"
 }

@@ -34,6 +34,11 @@ dependencies:
     sdk: flutter
   shared_preferences: ^2.5.3
   flutter_svg: ^2.2.0
+  
+  # GitHub dependency
+  q_ui_components:
+    git:
+      url: https://github.com/MPasara/QUiComponents.git
 
 dev_dependencies:
   flutter_test:

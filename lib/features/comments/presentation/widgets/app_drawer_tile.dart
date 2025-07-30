@@ -1,3 +1,4 @@
+import 'package:comments/common/presentation/build_context_extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -21,7 +22,7 @@ class AppDrawerTile extends StatelessWidget {
       selected: selected,
       selectedTileColor: selected ? Colors.deepPurple.shade100 : Colors.blue,
       leading: SvgPicture.asset(leadingIconPath, width: 28, height: 28),
-      title: Text(tileText),
+      title: Text(tileText, style: context.appTextStyles.regular),
       onTap: onTap,
     );
   }

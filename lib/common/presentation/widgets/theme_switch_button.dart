@@ -1,0 +1,89 @@
+import 'package:comments/common/presentation/build_context_extensions.dart';
+import 'package:comments/generated/l10n.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+class ThemeSwitchButton extends ConsumerWidget {
+  const ThemeSwitchButton._({
+    required this.text,
+    required this.icon,
+    required this.onTap,
+    required this.bgColor,
+  });
+
+  final Function() onTap;
+  final String text;
+  final IconData icon;
+  final Color? bgColor;
+
+  factory ThemeSwitchButton.light({
+    required Function() onTap,
+    required Color? bgColor,
+  }) {
+    return ThemeSwitchButton._(
+      text: S.current.light,
+      icon: Icons.light_mode,
+      onTap: onTap,
+      bgColor: bgColor,
+    );
+  }
+
+  factory ThemeSwitchButton.system({
+    required Function() onTap,
+    required Color? bgColor,
+  }) {
+    return ThemeSwitchButton._(
+      text: S.current.system,
+      icon: Icons.phone_android_rounded,
+      onTap: onTap,
+      bgColor: bgColor,
+    );
+  }
+
+  factory ThemeSwitchButton.dark({
+    required Function() onTap,
+    required Color? bgColor,
+  }) {
+    return ThemeSwitchButton._(
+      text: S.current.dark,
+      icon: Icons.dark_mode,
+      onTap: onTap,
+      bgColor: bgColor,
+    );
+  }
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Material(
+          color: bgColor,
+          borderRadius: BorderRadius.circular(6),
+          child: InkWell(
+            onTap: onTap,
+            borderRadius: BorderRadius.circular(6),
+            splashColor: context.appColors.background!.withValues(alpha: 0.2),
+            child: SizedBox(
+              width: 50,
+              height: 50,
+              child: Center(
+                child: Icon(
+                  icon,
+                  color: context.appColors.background,
+                  size: 20,
+                ),
+              ),
+            ),
+          ),
+        ),
+        const SizedBox(height: 4),
+        Text(
+          text,
+          style: context.appTextStyles.regular?.copyWith(fontSize: 10),
+          textAlign: TextAlign.center,
+        ),
+      ],
+    );
+  }
+}

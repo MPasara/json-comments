@@ -1,3 +1,4 @@
+import 'package:comments/common/presentation/build_context_extensions.dart';
 import 'package:comments/features/comments/domain/notifiers/comments_notifier/comments_notifier.dart';
 import 'package:comments/features/comments/domain/notifiers/comments_notifier/comments_state.dart';
 import 'package:comments/features/comments/presentation/widgets/app_drawer.dart';
@@ -21,7 +22,7 @@ class _MyHomePageState extends ConsumerState<HomePage> {
     final state = ref.watch(commentsNotifierProvider);
 
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 240, 239, 239),
+      backgroundColor: context.appColors.background,
       drawer: AppDrawer(),
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
