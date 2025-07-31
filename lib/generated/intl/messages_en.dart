@@ -35,6 +35,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "croatian": MessageLookupByLibrary.simpleMessage("Croatian"),
     "dark": MessageLookupByLibrary.simpleMessage("Dark"),
     "english": MessageLookupByLibrary.simpleMessage("English"),
+    "fetch_app_version_failed": MessageLookupByLibrary.simpleMessage(
+      "\'Fetch app version failed\',",
+    ),
     "fetch_language_failed": MessageLookupByLibrary.simpleMessage(
       "Fetch language failed",
     ),
@@ -57,5 +60,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "unknown_error_occurred": MessageLookupByLibrary.simpleMessage(
       "Unknown error occurred",
     ),
+    "version": MessageLookupByLibrary.simpleMessage("Version"),
   };
 }

@@ -39,6 +39,7 @@ dependencies:
   q_ui_components:
     git:
       url: https://github.com/MPasara/QUiComponents.git
+  package_info_plus: ^8.3.0
 
 dev_dependencies:
   flutter_test:

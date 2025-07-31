@@ -26,6 +26,7 @@ class _MyHomePageState extends ConsumerState<HomePage> {
       drawer: AppDrawer(),
 
       appBar: AppBar(
+        scrolledUnderElevation: 0,
         leading: Builder(
           builder: (context) => IconButton(
             icon: Icon(Icons.menu, color: context.appColors.primary),

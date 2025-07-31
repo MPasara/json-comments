@@ -35,6 +35,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "croatian": MessageLookupByLibrary.simpleMessage("Hrvatski"),
     "dark": MessageLookupByLibrary.simpleMessage("Tamno"),
     "english": MessageLookupByLibrary.simpleMessage("Engleski"),
+    "fetch_app_version_failed": MessageLookupByLibrary.simpleMessage(
+      "Dohvaćanje verzije aplikacije nije uspjelo",
+    ),
     "fetch_language_failed": MessageLookupByLibrary.simpleMessage(
       "Dohvaćanje jezika nije uspjelo",
     ),
