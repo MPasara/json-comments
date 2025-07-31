@@ -23,6 +23,7 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "change_language": MessageLookupByLibrary.simpleMessage("Cambiar idioma: "),
+    "change_theme": MessageLookupByLibrary.simpleMessage("Cambiar tema"),
     "comment": MessageLookupByLibrary.simpleMessage("Comentario"),
     "comment_list_empty": MessageLookupByLibrary.simpleMessage(
       "La lista parece estar vacía",
@@ -30,6 +31,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "comments": MessageLookupByLibrary.simpleMessage("Comentarios"),
     "contact": MessageLookupByLibrary.simpleMessage("Contacto"),
     "croatian": MessageLookupByLibrary.simpleMessage("Croata"),
+    "dark": MessageLookupByLibrary.simpleMessage("Oscuro"),
     "english": MessageLookupByLibrary.simpleMessage("Inglés"),
     "fetch_language_failed": MessageLookupByLibrary.simpleMessage(
       "Error al obtener el idioma",
@@ -39,11 +41,16 @@ class MessageLookup extends MessageLookupByLibrary {
       "No se pudieron obtener los comentarios...",
     ),
     "id": MessageLookupByLibrary.simpleMessage("ID"),
+    "light": MessageLookupByLibrary.simpleMessage("Claro"),
     "name": MessageLookupByLibrary.simpleMessage("Nombre"),
     "set_language_failed": MessageLookupByLibrary.simpleMessage(
       "Error al establecer el idioma",
     ),
+    "set_theme_failed": MessageLookupByLibrary.simpleMessage(
+      "Error al establecer el modo de tema",
+    ),
     "spanish": MessageLookupByLibrary.simpleMessage("Español"),
+    "system": MessageLookupByLibrary.simpleMessage("Sistema"),
     "try_again": MessageLookupByLibrary.simpleMessage("Intentar de nuevo"),
     "unknown_error_occurred": MessageLookupByLibrary.simpleMessage(
       "Ocurrió un error desconocido",

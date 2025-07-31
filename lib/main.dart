@@ -1,9 +1,11 @@
 import 'package:comments/common/domain/notifiers/locale_notifier.dart';
+import 'package:comments/common/domain/notifiers/theme_notifier.dart';
 import 'package:comments/common/utils/constants/locale_constants.dart';
 import 'package:comments/common/utils/custom_provider_observer.dart';
 import 'package:comments/common/utils/disabled_printer.dart';
 import 'package:comments/features/comments/presentation/home_page.dart';
 import 'package:comments/generated/l10n.dart';
+import 'package:comments/theme/theme.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -31,8 +33,12 @@ class CommentsApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final themeMode = ref.watch(themeNotifierProvider);
     final selectedLocale = ref.watch(localeNotifierProvider);
     return MaterialApp(
+      theme: primaryTheme,
+      darkTheme: secondaryTheme,
+      themeMode: themeMode,
       locale: selectedLocale,
       supportedLocales: [
         Locale(LocaleConstants.eng),
@@ -44,9 +50,6 @@ class CommentsApp extends ConsumerWidget {
         S.delegate,
         ...GlobalMaterialLocalizations.delegates,
       ],
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.purple),
-      ),
       home: const HomePage(),
     );
   }

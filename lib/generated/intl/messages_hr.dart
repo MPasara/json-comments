@@ -25,6 +25,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "change_language": MessageLookupByLibrary.simpleMessage(
       "Promijeni jezik: ",
     ),
+    "change_theme": MessageLookupByLibrary.simpleMessage("Promijeni temu"),
     "comment": MessageLookupByLibrary.simpleMessage("Komentar"),
     "comment_list_empty": MessageLookupByLibrary.simpleMessage(
       "Izgelda da je lista prazna",
@@ -32,6 +33,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "comments": MessageLookupByLibrary.simpleMessage("Komentari"),
     "contact": MessageLookupByLibrary.simpleMessage("Kontaktiraj"),
     "croatian": MessageLookupByLibrary.simpleMessage("Hrvatski"),
+    "dark": MessageLookupByLibrary.simpleMessage("Tamno"),
     "english": MessageLookupByLibrary.simpleMessage("Engleski"),
     "fetch_language_failed": MessageLookupByLibrary.simpleMessage(
       "Dohvaćanje jezika nije uspjelo",
@@ -41,11 +43,16 @@ class MessageLookup extends MessageLookupByLibrary {
       "Dohvaćanje komentara nije uspjelo...",
     ),
     "id": MessageLookupByLibrary.simpleMessage("ID"),
+    "light": MessageLookupByLibrary.simpleMessage("Svijetlo"),
     "name": MessageLookupByLibrary.simpleMessage("Ime"),
     "set_language_failed": MessageLookupByLibrary.simpleMessage(
       "Postavljanje jezika nije uspjelo",
     ),
+    "set_theme_failed": MessageLookupByLibrary.simpleMessage(
+      "Postavljanje načina teme nije uspjelo",
+    ),
     "spanish": MessageLookupByLibrary.simpleMessage("Španjolski"),
+    "system": MessageLookupByLibrary.simpleMessage("Sustav"),
     "try_again": MessageLookupByLibrary.simpleMessage("Pokušajte ponovno"),
     "unknown_error_occurred": MessageLookupByLibrary.simpleMessage(
       "Došlo je do nepoznate greške",

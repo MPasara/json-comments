@@ -15,5 +15,10 @@
     "croatian" : "Croatian",
     "spanish" : "Spanish",
     "french" : "French",
-    "change_language": "Change language: "
+    "change_language": "Change language: ",
+    "light" : "Light",
+    "dark" : "Dark",
+    "system" : "System",
+    "set_theme_failed" : "Set theme mode failed",
+    "change_theme" : "Change theme"
 }
