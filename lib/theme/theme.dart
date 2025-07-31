@@ -55,6 +55,11 @@ ThemeData _getTheme({required AppColors appColors}) {
           color: appColors.primary,
           fontWeight: FontWeight.bold,
         ),
+        title: TextStyle(
+          fontSize: 20,
+          color: appColors.primary,
+          fontWeight: FontWeight.bold,
+        ),
       ),
     ],
   );

@@ -3,6 +3,7 @@ import 'package:comments/features/comments/domain/entities/comment.dart';
 import 'package:comments/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:q_ui_components/widgets/q_button.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class CommentListTile extends StatefulWidget {
@@ -41,16 +42,13 @@ class _CommentListTileState extends State<CommentListTile> {
           side: BorderSide.none,
         ),
         leading: CircleAvatar(
-          backgroundColor: Theme.of(context).colorScheme.secondary,
+          backgroundColor: context.appColors.secondary!.withValues(alpha: 0.5),
           child: Text(
             widget.comment.id.toString(),
             style: context.appTextStyles.regular,
           ),
         ),
-        title: Text(
-          widget.comment.email,
-          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-        ),
+        title: Text(widget.comment.email, style: context.appTextStyles.bold),
         subtitle: Text(
           '${S.of(context).id} ${widget.comment.id}',
           style: const TextStyle(color: Colors.grey, fontSize: 14),
@@ -70,29 +68,24 @@ class _CommentListTileState extends State<CommentListTile> {
                   ),
                 ),
                 const SizedBox(height: 4),
-                Text(widget.comment.name, style: const TextStyle(fontSize: 16)),
+                Text(widget.comment.name, style: context.appTextStyles.regular),
                 const SizedBox(height: 16),
-                Text(
-                  S.of(context).comment,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Theme.of(context).colorScheme.primary,
-                    fontSize: 14,
-                  ),
-                ),
+                Text(S.of(context).comment, style: context.appTextStyles.bold),
                 const SizedBox(height: 4),
-                Text(widget.comment.body, style: const TextStyle(fontSize: 16)),
+                Text(widget.comment.body, style: context.appTextStyles.regular),
                 const SizedBox(height: 16),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    ElevatedButton(
-                      onPressed: () async {
+                    QButton.text(
+                      text: S.of(context).contact,
+                      borderColor: context.appColors.primary,
+                      onPressed: () {
                         final email = widget.comment.email;
                         HapticFeedback.mediumImpact();
                         _launchEmail(email);
                       },
-                      child: Text(S.of(context).contact),
+                      textStyle: context.appTextStyles.regular,
                     ),
                   ],
                 ),

@@ -19,5 +19,6 @@
     "light": "Claro",
     "dark": "Oscuro",
     "system": "Sistema",
-    "set_theme_failed": "Error al establecer el modo de tema"
+    "set_theme_failed": "Error al establecer el modo de tema",
+    "change_theme": "Cambiar tema"
 }

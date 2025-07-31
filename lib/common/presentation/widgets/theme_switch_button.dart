@@ -54,36 +54,38 @@ class ThemeSwitchButton extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Material(
-          color: bgColor,
-          borderRadius: BorderRadius.circular(6),
-          child: InkWell(
-            onTap: onTap,
-            borderRadius: BorderRadius.circular(6),
-            splashColor: context.appColors.background!.withValues(alpha: 0.2),
-            child: SizedBox(
-              width: 50,
-              height: 50,
-              child: Center(
-                child: Icon(
-                  icon,
-                  color: context.appColors.background,
-                  size: 20,
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        borderRadius: BorderRadius.circular(8),
+        splashColor: context.appColors.background!.withValues(alpha: 0.2),
+        highlightColor: context.appColors.background!.withValues(alpha: 0.2),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Material(
+              color: bgColor,
+              borderRadius: BorderRadius.circular(8),
+              child: InkWell(
+                onTap: onTap,
+                borderRadius: BorderRadius.circular(8),
+                splashColor: context.appColors.background!.withValues(
+                  alpha: 0.2,
+                ),
+                child: SizedBox(
+                  width: 75,
+                  height: 75,
+                  child: Center(
+                    child: Icon(icon, color: context.appColors.background),
+                  ),
                 ),
               ),
             ),
-          ),
+            SizedBox(height: 6),
+            Text(text, style: context.appTextStyles.regular),
+          ],
         ),
-        const SizedBox(height: 4),
-        Text(
-          text,
-          style: context.appTextStyles.regular?.copyWith(fontSize: 10),
-          textAlign: TextAlign.center,
-        ),
-      ],
+      ),
     );
   }
 }

@@ -11,7 +11,6 @@ class ThemeSwitcherRow extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final selectedTheme = ref.watch(themeNotifierProvider);
-    print('ThemeSwitcherRow: Current theme mode: $selectedTheme');
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
@@ -25,7 +24,7 @@ class ThemeSwitcherRow extends ConsumerWidget {
               Expanded(
                 child: ThemeSwitchButton.light(
                   bgColor: selectedTheme == ThemeMode.light
-                      ? context.appColors.background
+                      ? context.appColors.primary
                       : context.appColors.secondary,
                   onTap: () {
                     HapticFeedback.mediumImpact();
@@ -39,7 +38,7 @@ class ThemeSwitcherRow extends ConsumerWidget {
               Expanded(
                 child: ThemeSwitchButton.system(
                   bgColor: selectedTheme == ThemeMode.system
-                      ? context.appColors.background
+                      ? context.appColors.primary
                       : context.appColors.secondary,
                   onTap: () {
                     HapticFeedback.mediumImpact();
@@ -53,7 +52,7 @@ class ThemeSwitcherRow extends ConsumerWidget {
               Expanded(
                 child: ThemeSwitchButton.dark(
                   bgColor: selectedTheme == ThemeMode.dark
-                      ? context.appColors.background
+                      ? context.appColors.primary
                       : context.appColors.secondary,
                   onTap: () {
                     HapticFeedback.mediumImpact();

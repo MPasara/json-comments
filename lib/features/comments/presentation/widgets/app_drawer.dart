@@ -15,7 +15,6 @@ class AppDrawer extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final selectedLocale = ref.watch(localeNotifierProvider);
     return Drawer(
-      key: ValueKey(selectedLocale.languageCode),
       backgroundColor: context.appColors.background,
       child: SafeArea(
         child: ListView(
@@ -27,14 +26,17 @@ class AppDrawer extends ConsumerWidget {
                   onPressed: () {
                     Navigator.pop(context);
                   },
-                  icon: Icon(Icons.close),
+                  icon: Icon(Icons.close, color: context.appColors.primary),
                 ),
                 Spacer(),
               ],
             ),
             Padding(
               padding: const EdgeInsets.only(left: 14),
-              child: Text(S.of(context).change_language),
+              child: Text(
+                S.of(context).change_language,
+                style: context.appTextStyles.regular,
+              ),
             ),
             AppDrawerTile(
               onTap: () => ref
@@ -69,6 +71,13 @@ class AppDrawer extends ConsumerWidget {
               selected: selectedLocale.languageCode == LocaleConstants.fr,
             ),
             SizedBox(height: 40),
+            Padding(
+              padding: const EdgeInsets.only(left: 14),
+              child: Text(
+                S.of(context).change_theme,
+                style: context.appTextStyles.regular,
+              ),
+            ),
             ThemeSwitcherRow(),
           ],
         ),

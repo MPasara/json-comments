@@ -25,6 +25,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "change_language": MessageLookupByLibrary.simpleMessage(
       "Promijeni jezik: ",
     ),
+    "change_theme": MessageLookupByLibrary.simpleMessage("Promijeni temu"),
     "comment": MessageLookupByLibrary.simpleMessage("Komentar"),
     "comment_list_empty": MessageLookupByLibrary.simpleMessage(
       "Izgelda da je lista prazna",

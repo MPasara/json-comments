@@ -19,5 +19,6 @@
     "light": "Clair",
     "dark": "Sombre",
     "system": "Système",
-    "set_theme_failed": "Échec de la définition du mode de thème"
+    "set_theme_failed": "Échec de la définition du mode de thème",
+    "change_theme": "Changer le thème"
 }

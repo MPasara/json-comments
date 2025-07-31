@@ -20,7 +20,7 @@ class AppDrawerTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       selected: selected,
-      selectedTileColor: selected ? Colors.deepPurple.shade100 : Colors.blue,
+      selectedTileColor: context.appColors.secondary!.withValues(alpha: 0.5),
       leading: SvgPicture.asset(leadingIconPath, width: 28, height: 28),
       title: Text(tileText, style: context.appTextStyles.regular),
       onTap: onTap,

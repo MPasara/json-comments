@@ -1,3 +1,4 @@
+import 'package:comments/common/presentation/build_context_extensions.dart';
 import 'package:comments/features/comments/domain/entities/comment.dart';
 import 'package:comments/features/comments/domain/notifiers/comments_notifier/comments_notifier.dart';
 import 'package:comments/features/comments/presentation/widgets/comment_list_tile.dart';
@@ -19,6 +20,7 @@ class CommentsListWidget extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return RefreshIndicator(
+      color: context.appColors.secondary,
       onRefresh: () => ref
           .read(commentsNotifierProvider.notifier)
           .getComments(refresh: true),
@@ -33,10 +35,9 @@ class CommentsListWidget extends ConsumerWidget {
           return false;
         },
         child: Scrollbar(
-          thumbVisibility: true,
           trackVisibility: true,
           child: ListView.builder(
-            primary: false,
+            //primary: false,
             physics: const AlwaysScrollableScrollPhysics(),
             itemCount: comments.length + (hasReachedMax ? 0 : 1),
             itemBuilder: (context, index) {

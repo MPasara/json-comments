@@ -24,9 +24,16 @@ class _MyHomePageState extends ConsumerState<HomePage> {
     return Scaffold(
       backgroundColor: context.appColors.background,
       drawer: AppDrawer(),
+
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(S.of(context).comments),
+        leading: Builder(
+          builder: (context) => IconButton(
+            icon: Icon(Icons.menu, color: context.appColors.primary),
+            onPressed: () => Scaffold.of(context).openDrawer(),
+          ),
+        ),
+        backgroundColor: context.appColors.background,
+        title: Text(S.of(context).comments, style: context.appTextStyles.title),
         centerTitle: true,
       ),
       body: switch (state) {

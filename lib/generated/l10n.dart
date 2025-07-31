@@ -188,6 +188,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Change theme`
+  String get change_theme {
+    return Intl.message(
+      'Change theme',
+      name: 'change_theme',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

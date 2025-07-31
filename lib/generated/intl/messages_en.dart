@@ -25,6 +25,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "change_language": MessageLookupByLibrary.simpleMessage(
       "Change language: ",
     ),
+    "change_theme": MessageLookupByLibrary.simpleMessage("Change theme"),
     "comment": MessageLookupByLibrary.simpleMessage("Comment"),
     "comment_list_empty": MessageLookupByLibrary.simpleMessage(
       "List appears to be empty",
