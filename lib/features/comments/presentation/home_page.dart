@@ -33,7 +33,7 @@ class _MyHomePageState extends ConsumerState<HomePage> {
             onPressed: () => Scaffold.of(context).openDrawer(),
           ),
         ),
-        backgroundColor: context.appColors.background,
+        backgroundColor: context.appColors.commentTileColor,
         title: Text(S.of(context).comments, style: context.appTextStyles.title),
         centerTitle: true,
       ),
