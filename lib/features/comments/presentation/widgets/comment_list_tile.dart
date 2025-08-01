@@ -26,9 +26,11 @@ class _CommentListTileState extends State<CommentListTile> {
       elevation: isExpanded ? 0 : 2,
       color: context.appColors.commentTileColor,
       child: ExpansionTile(
-        onExpansionChanged: (value) {
-          setState(() => isExpanded = value);
+        onExpansionChanged: (newValue) {
+          setState(() => isExpanded = newValue);
         },
+        iconColor: context.appColors.secondary,
+        collapsedIconColor: context.appColors.primary,
         expansionAnimationStyle: AnimationStyle(
           curve: Curves.easeOutBack,
           duration: Duration(milliseconds: 350),

@@ -20,5 +20,6 @@
     "dark": "Tamno",
     "system": "Sustav",
     "set_theme_failed": "Postavljanje načina teme nije uspjelo",
-    "change_theme": "Promijeni temu"
+    "change_theme": "Promijeni temu",
+    "fetch_app_version_failed": "Dohvaćanje verzije aplikacije nije uspjelo"
 }

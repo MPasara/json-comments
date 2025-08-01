@@ -20,5 +20,6 @@
     "dark": "Oscuro",
     "system": "Sistema",
     "set_theme_failed": "Error al establecer el modo de tema",
-    "change_theme": "Cambiar tema"
+    "change_theme": "Cambiar tema",
+    "fetch_app_version_failed": "No se pudo obtener la versión de la aplicación"
 }

@@ -20,5 +20,7 @@
     "dark" : "Dark",
     "system" : "System",
     "set_theme_failed" : "Set theme mode failed",
-    "change_theme" : "Change theme"
+    "change_theme" : "Change theme",
+    "fetch_app_version_failed" : "'Fetch app version failed',",
+    "version" : "Version"
 }

@@ -26,13 +26,14 @@ class _MyHomePageState extends ConsumerState<HomePage> {
       drawer: AppDrawer(),
 
       appBar: AppBar(
+        scrolledUnderElevation: 0,
         leading: Builder(
           builder: (context) => IconButton(
             icon: Icon(Icons.menu, color: context.appColors.primary),
             onPressed: () => Scaffold.of(context).openDrawer(),
           ),
         ),
-        backgroundColor: context.appColors.background,
+        backgroundColor: context.appColors.commentTileColor,
         title: Text(S.of(context).comments, style: context.appTextStyles.title),
         centerTitle: true,
       ),

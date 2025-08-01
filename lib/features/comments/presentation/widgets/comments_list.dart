@@ -20,7 +20,8 @@ class CommentsListWidget extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return RefreshIndicator(
-      color: context.appColors.secondary,
+      backgroundColor: context.appColors.background,
+      color: context.appColors.primary,
       onRefresh: () => ref
           .read(commentsNotifierProvider.notifier)
           .getComments(refresh: true),
@@ -37,7 +38,7 @@ class CommentsListWidget extends ConsumerWidget {
         child: Scrollbar(
           trackVisibility: true,
           child: ListView.builder(
-            //primary: false,
+            padding: EdgeInsets.only(top: 10),
             physics: const AlwaysScrollableScrollPhysics(),
             itemCount: comments.length + (hasReachedMax ? 0 : 1),
             itemBuilder: (context, index) {
@@ -45,10 +46,11 @@ class CommentsListWidget extends ConsumerWidget {
                 return Container(
                   padding: const EdgeInsets.all(16.0),
                   alignment: Alignment.center,
-                  child: const CircularProgressIndicator(color: Colors.purple),
+                  child: CircularProgressIndicator(
+                    color: context.appColors.secondary,
+                  ),
                 );
               }
-
               final comment = comments[index];
               return CommentListTile(comment: comment);
             },
