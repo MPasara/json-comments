@@ -31,10 +31,14 @@ class MessageLookup extends MessageLookupByLibrary {
       "La liste semble être vide",
     ),
     "comments": MessageLookupByLibrary.simpleMessage("Commentaires"),
+    "comments_load_success": MessageLookupByLibrary.simpleMessage(
+      "Commentaires chargés avec succès",
+    ),
     "contact": MessageLookupByLibrary.simpleMessage("Contact"),
     "croatian": MessageLookupByLibrary.simpleMessage("Croate"),
     "dark": MessageLookupByLibrary.simpleMessage("Sombre"),
     "english": MessageLookupByLibrary.simpleMessage("Anglais"),
+    "error": MessageLookupByLibrary.simpleMessage("Erreur"),
     "fetch_app_version_failed": MessageLookupByLibrary.simpleMessage(
       "Échec de la récupération de la version de l’application",
     ),
@@ -46,6 +50,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Échec de la récupération des commentaires...",
     ),
     "id": MessageLookupByLibrary.simpleMessage("ID"),
+    "info": MessageLookupByLibrary.simpleMessage("Info"),
     "light": MessageLookupByLibrary.simpleMessage("Clair"),
     "name": MessageLookupByLibrary.simpleMessage("Nom"),
     "set_language_failed": MessageLookupByLibrary.simpleMessage(
@@ -55,10 +60,12 @@ class MessageLookup extends MessageLookupByLibrary {
       "Échec de la définition du mode de thème",
     ),
     "spanish": MessageLookupByLibrary.simpleMessage("Espagnol"),
+    "success": MessageLookupByLibrary.simpleMessage("Succès"),
     "system": MessageLookupByLibrary.simpleMessage("Système"),
     "try_again": MessageLookupByLibrary.simpleMessage("Réessayer"),
     "unknown_error_occurred": MessageLookupByLibrary.simpleMessage(
       "Une erreur inconnue s\'est produite",
     ),
+    "version": MessageLookupByLibrary.simpleMessage("Version"),
   };
 }

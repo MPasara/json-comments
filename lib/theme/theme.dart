@@ -60,6 +60,16 @@ ThemeData _getTheme({required AppColors appColors}) {
           color: appColors.primary,
           fontWeight: FontWeight.bold,
         ),
+        toast: TextStyle(
+          fontSize: 16,
+          color: Colors.black,
+          fontWeight: FontWeight.bold,
+        ),
+        error: TextStyle(
+          fontSize: 24,
+          color: appColors.errorRed,
+          fontWeight: FontWeight.bold,
+        ),
       ),
     ],
   );

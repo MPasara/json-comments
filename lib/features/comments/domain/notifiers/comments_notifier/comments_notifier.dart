@@ -1,5 +1,7 @@
+import 'package:comments/common/presentation/toast_providers.dart';
 import 'package:comments/features/comments/data/repositories/comments_repository.dart';
 import 'package:comments/features/comments/domain/notifiers/comments_notifier/comments_state.dart';
+import 'package:comments/generated/l10n.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final commentsNotifierProvider =
@@ -32,10 +34,12 @@ class CommentsNotifier extends Notifier<CommentsState> {
     );
 
     eitherFailureOrComments.fold(
-      (failure) => state = CommentsState.error(failure),
+      (failure) {
+        state = CommentsState.error(failure);
+        ref.read(failureProvider.notifier).state = failure;
+      },
       (newComments) {
         if (refresh || _currentStart == 0) {
-          // First load or refresh
           if (newComments.isEmpty) {
             state = const CommentsState.empty();
           } else {
@@ -44,9 +48,10 @@ class CommentsNotifier extends Notifier<CommentsState> {
               hasReachedMax: newComments.length < _limit,
             );
             _currentStart += newComments.length;
+            ref.read(successMessageProvider.notifier).state =
+                S.current.comments_load_success;
           }
         } else {
-          // Loading more
           final currentState = state;
           if (currentState is CommentsData) {
             final allComments = [...currentState.data, ...newComments];
@@ -66,7 +71,6 @@ class CommentsNotifier extends Notifier<CommentsState> {
     if (currentState is CommentsData &&
         !currentState.hasReachedMax &&
         !currentState.isLoadingMore) {
-      // Set loading more state
       state = currentState.copyWith(isLoadingMore: true);
 
       final eitherFailureOrComments = await _commentsRepository.getComments(
@@ -76,9 +80,8 @@ class CommentsNotifier extends Notifier<CommentsState> {
 
       eitherFailureOrComments.fold(
         (failure) {
-          // Reset loading state on error
           state = currentState.copyWith(isLoadingMore: false);
-          //toast goes here
+          ref.read(failureProvider.notifier).state = failure;
         },
         (newComments) {
           final allComments = [...currentState.data, ...newComments];

@@ -1,3 +1,4 @@
+import 'package:comments/common/presentation/build_context_extensions.dart';
 import 'package:comments/features/comments/domain/notifiers/comments_notifier/comments_notifier.dart';
 import 'package:comments/generated/l10n.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +15,7 @@ class CommentsEmptyListWidget extends ConsumerWidget {
         Center(
           child: Text(
             S.of(context).comment_list_empty,
-            style: const TextStyle(color: Colors.red, fontSize: 24),
+            style: context.appTextStyles.error,
           ),
         ),
         const SizedBox.square(dimension: 14),

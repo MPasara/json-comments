@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:comments/common/domain/notifiers/locale_notifier.dart';
 import 'package:comments/common/presentation/build_context_extensions.dart';
 import 'package:comments/common/presentation/image_assets.dart';
@@ -15,89 +17,89 @@ class AppDrawer extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final selectedLocale = ref.watch(localeNotifierProvider);
-    return Drawer(
-      backgroundColor: context.appColors.background,
-      child: SafeArea(
-        child: Column(
-          children: [
-            Row(
-              children: [
-                IconButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  icon: Icon(Icons.close, color: context.appColors.primary),
-                ),
-                Spacer(),
-              ],
-            ),
-            SizedBox(height: 10),
-            Expanded(
-              child: SingleChildScrollView(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 14),
-                      child: Text(
-                        S.of(context).change_language,
-                        style: context.appTextStyles.bold,
+    return BackdropFilter(
+      filter: ImageFilter.blur(sigmaX: 1.5, sigmaY: 1.5),
+      child: Drawer(
+        backgroundColor: context.appColors.background,
+        child: SafeArea(
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  IconButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    icon: Icon(Icons.close, color: context.appColors.primary),
+                  ),
+                  Spacer(),
+                ],
+              ),
+              SizedBox(height: 10),
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 14),
+                        child: Text(
+                          S.of(context).change_language,
+                          style: context.appTextStyles.bold,
+                        ),
                       ),
-                    ),
-                    AppDrawerTile(
-                      onTap: () => ref
-                          .read(localeNotifierProvider.notifier)
-                          .setLocale(Locale(LocaleConstants.eng)),
-                      leadingIconPath: ImageAssets.englandFlag,
-                      tileText: S.of(context).english,
-                      selected:
-                          selectedLocale.languageCode == LocaleConstants.eng,
-                    ),
-                    AppDrawerTile(
-                      onTap: () => ref
-                          .read(localeNotifierProvider.notifier)
-                          .setLocale(Locale(LocaleConstants.cro)),
-                      leadingIconPath: ImageAssets.croatiaFlag,
-                      tileText: S.of(context).croatian,
-                      selected:
-                          selectedLocale.languageCode == LocaleConstants.cro,
-                    ),
-                    AppDrawerTile(
-                      onTap: () => ref
-                          .read(localeNotifierProvider.notifier)
-                          .setLocale(Locale(LocaleConstants.esp)),
-                      leadingIconPath: ImageAssets.spainFlag,
-                      tileText: S.of(context).spanish,
-                      selected:
-                          selectedLocale.languageCode == LocaleConstants.esp,
-                    ),
-                    AppDrawerTile(
-                      onTap: () => ref
-                          .read(localeNotifierProvider.notifier)
-                          .setLocale(Locale(LocaleConstants.fr)),
-                      leadingIconPath: ImageAssets.franceFlag,
-                      tileText: S.of(context).french,
-                      selected:
-                          selectedLocale.languageCode == LocaleConstants.fr,
-                    ),
-                    SizedBox(height: 40),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 14),
-                      child: Text(
-                        S.of(context).change_theme,
-                        style: context.appTextStyles.bold,
+                      AppDrawerTile(
+                        onTap: () => ref
+                            .read(localeNotifierProvider.notifier)
+                            .setLocale(Locale(LocaleConstants.eng)),
+                        leadingIconPath: ImageAssets.englandFlag,
+                        tileText: S.of(context).english,
+                        selected:
+                            selectedLocale.languageCode == LocaleConstants.eng,
                       ),
-                    ),
-                    ThemeSwitcherRow(),
-                  ],
+                      AppDrawerTile(
+                        onTap: () => ref
+                            .read(localeNotifierProvider.notifier)
+                            .setLocale(Locale(LocaleConstants.cro)),
+                        leadingIconPath: ImageAssets.croatiaFlag,
+                        tileText: S.of(context).croatian,
+                        selected:
+                            selectedLocale.languageCode == LocaleConstants.cro,
+                      ),
+                      AppDrawerTile(
+                        onTap: () => ref
+                            .read(localeNotifierProvider.notifier)
+                            .setLocale(Locale(LocaleConstants.esp)),
+                        leadingIconPath: ImageAssets.spainFlag,
+                        tileText: S.of(context).spanish,
+                        selected:
+                            selectedLocale.languageCode == LocaleConstants.esp,
+                      ),
+                      AppDrawerTile(
+                        onTap: () => ref
+                            .read(localeNotifierProvider.notifier)
+                            .setLocale(Locale(LocaleConstants.fr)),
+                        leadingIconPath: ImageAssets.franceFlag,
+                        tileText: S.of(context).french,
+                        selected:
+                            selectedLocale.languageCode == LocaleConstants.fr,
+                      ),
+                      SizedBox(height: 40),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 14),
+                        child: Text(
+                          S.of(context).change_theme,
+                          style: context.appTextStyles.bold,
+                        ),
+                      ),
+                      ThemeSwitcherRow(),
+                    ],
+                  ),
                 ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(14),
-              child: AppVersionLabel(),
-            ),
-          ],
+              AppVersionLabel(),
+            ],
+          ),
         ),
       ),
     );

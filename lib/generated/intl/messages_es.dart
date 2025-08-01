@@ -29,10 +29,14 @@ class MessageLookup extends MessageLookupByLibrary {
       "La lista parece estar vacía",
     ),
     "comments": MessageLookupByLibrary.simpleMessage("Comentarios"),
+    "comments_load_success": MessageLookupByLibrary.simpleMessage(
+      "Comentarios cargados correctamente",
+    ),
     "contact": MessageLookupByLibrary.simpleMessage("Contacto"),
     "croatian": MessageLookupByLibrary.simpleMessage("Croata"),
     "dark": MessageLookupByLibrary.simpleMessage("Oscuro"),
     "english": MessageLookupByLibrary.simpleMessage("Inglés"),
+    "error": MessageLookupByLibrary.simpleMessage("Error"),
     "fetch_app_version_failed": MessageLookupByLibrary.simpleMessage(
       "No se pudo obtener la versión de la aplicación",
     ),
@@ -44,6 +48,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "No se pudieron obtener los comentarios...",
     ),
     "id": MessageLookupByLibrary.simpleMessage("ID"),
+    "info": MessageLookupByLibrary.simpleMessage("Información"),
     "light": MessageLookupByLibrary.simpleMessage("Claro"),
     "name": MessageLookupByLibrary.simpleMessage("Nombre"),
     "set_language_failed": MessageLookupByLibrary.simpleMessage(
@@ -53,10 +58,12 @@ class MessageLookup extends MessageLookupByLibrary {
       "Error al establecer el modo de tema",
     ),
     "spanish": MessageLookupByLibrary.simpleMessage("Español"),
+    "success": MessageLookupByLibrary.simpleMessage("Éxito"),
     "system": MessageLookupByLibrary.simpleMessage("Sistema"),
     "try_again": MessageLookupByLibrary.simpleMessage("Intentar de nuevo"),
     "unknown_error_occurred": MessageLookupByLibrary.simpleMessage(
       "Ocurrió un error desconocido",
     ),
+    "version": MessageLookupByLibrary.simpleMessage("Versión"),
   };
 }
