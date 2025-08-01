@@ -1,4 +1,7 @@
+import 'package:comments/common/domain/failure.dart';
 import 'package:comments/common/presentation/build_context_extensions.dart';
+import 'package:comments/common/presentation/toast_providers.dart';
+import 'package:comments/common/presentation/toast_service.dart';
 import 'package:comments/features/comments/domain/notifiers/comments_notifier/comments_notifier.dart';
 import 'package:comments/features/comments/domain/notifiers/comments_notifier/comments_state.dart';
 import 'package:comments/features/comments/presentation/widgets/app_drawer.dart';
@@ -21,10 +24,34 @@ class _MyHomePageState extends ConsumerState<HomePage> {
   Widget build(BuildContext context) {
     final state = ref.watch(commentsNotifierProvider);
 
+    ref.listen<Failure?>(failureProvider, (_, next) {
+      if (next != null && mounted) {
+        ToastService.showError(context, next.title);
+
+        // Clear the failure after showing toast
+        Future.microtask(() {
+          if (mounted) {
+            ref.read(failureProvider.notifier).state = null;
+          }
+        });
+      }
+    });
+
+    ref.listen<String?>(successMessageProvider, (previous, next) {
+      if (next != null && mounted) {
+        ToastService.showSuccess(context, next);
+
+        Future.microtask(() {
+          if (mounted) {
+            ref.read(successMessageProvider.notifier).state = null;
+          }
+        });
+      }
+    });
+
     return Scaffold(
       backgroundColor: context.appColors.background,
       drawer: AppDrawer(),
-
       appBar: AppBar(
         scrolledUnderElevation: 0,
         leading: Builder(

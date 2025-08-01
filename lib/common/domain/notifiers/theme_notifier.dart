@@ -1,9 +1,7 @@
 import 'package:comments/common/data/repositories/theme_repository.dart';
-import 'package:comments/common/domain/failure.dart';
+import 'package:comments/common/presentation/toast_providers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
-final failureProvider = StateProvider<Failure?>((_) => null);
 
 final themeNotifierProvider = NotifierProvider<ThemeNotifier, ThemeMode>(
   () => ThemeNotifier(),

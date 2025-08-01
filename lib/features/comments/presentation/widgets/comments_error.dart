@@ -1,4 +1,5 @@
 import 'package:comments/common/domain/failure.dart';
+import 'package:comments/common/presentation/build_context_extensions.dart';
 import 'package:comments/features/comments/domain/notifiers/comments_notifier/comments_notifier.dart';
 import 'package:comments/generated/l10n.dart';
 import 'package:flutter/material.dart';
@@ -14,9 +15,7 @@ class CommentsErrorWidget extends ConsumerWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Center(
-          child: Text(failure.title, style: const TextStyle(color: Colors.red)),
-        ),
+        Center(child: Text(failure.title, style: context.appTextStyles.error)),
         const SizedBox.square(dimension: 14),
         ElevatedButton(
           onPressed: () {

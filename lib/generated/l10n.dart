@@ -213,6 +213,31 @@ class S {
   String get version {
     return Intl.message('Version', name: 'version', desc: '', args: []);
   }
+
+  /// `Success`
+  String get success {
+    return Intl.message('Success', name: 'success', desc: '', args: []);
+  }
+
+  /// `Error`
+  String get error {
+    return Intl.message('Error', name: 'error', desc: '', args: []);
+  }
+
+  /// `Info`
+  String get info {
+    return Intl.message('Info', name: 'info', desc: '', args: []);
+  }
+
+  /// `Comments loaded successfully`
+  String get comments_load_success {
+    return Intl.message(
+      'Comments loaded successfully',
+      name: 'comments_load_success',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

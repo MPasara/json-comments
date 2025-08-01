@@ -6,12 +6,16 @@ final class AppTextStyles extends ThemeExtension<AppTextStyles> {
     required this.bold,
     required this.boldLarge,
     required this.title,
+    required this.toast,
+    required this.error,
   });
 
   final TextStyle? regular;
   final TextStyle? bold;
   final TextStyle? boldLarge;
   final TextStyle? title;
+  final TextStyle? toast;
+  final TextStyle? error;
 
   @override
   ThemeExtension<AppTextStyles> copyWith({
@@ -19,12 +23,16 @@ final class AppTextStyles extends ThemeExtension<AppTextStyles> {
     TextStyle? bold,
     TextStyle? boldLarge,
     TextStyle? title,
+    TextStyle? toast,
+    TextStyle? error,
   }) {
     return AppTextStyles(
       regular: regular ?? this.regular,
       bold: bold ?? this.bold,
       boldLarge: boldLarge ?? this.boldLarge,
       title: title ?? this.title,
+      toast: toast ?? this.toast,
+      error: error ?? this.error,
     );
   }
 
@@ -42,6 +50,8 @@ final class AppTextStyles extends ThemeExtension<AppTextStyles> {
       bold: TextStyle.lerp(bold, other.bold, t),
       boldLarge: TextStyle.lerp(boldLarge, other.boldLarge, t),
       title: TextStyle.lerp(title, other.title, t),
+      toast: TextStyle.lerp(toast, other.toast, t),
+      error: TextStyle.lerp(error, other.error, t),
     );
   }
 }

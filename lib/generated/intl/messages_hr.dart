@@ -31,10 +31,14 @@ class MessageLookup extends MessageLookupByLibrary {
       "Izgelda da je lista prazna",
     ),
     "comments": MessageLookupByLibrary.simpleMessage("Komentari"),
+    "comments_load_success": MessageLookupByLibrary.simpleMessage(
+      "Komentari uspješno učitani",
+    ),
     "contact": MessageLookupByLibrary.simpleMessage("Kontaktiraj"),
     "croatian": MessageLookupByLibrary.simpleMessage("Hrvatski"),
     "dark": MessageLookupByLibrary.simpleMessage("Tamno"),
     "english": MessageLookupByLibrary.simpleMessage("Engleski"),
+    "error": MessageLookupByLibrary.simpleMessage("Greška"),
     "fetch_app_version_failed": MessageLookupByLibrary.simpleMessage(
       "Dohvaćanje verzije aplikacije nije uspjelo",
     ),
@@ -46,6 +50,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Dohvaćanje komentara nije uspjelo...",
     ),
     "id": MessageLookupByLibrary.simpleMessage("ID"),
+    "info": MessageLookupByLibrary.simpleMessage("Informacija"),
     "light": MessageLookupByLibrary.simpleMessage("Svijetlo"),
     "name": MessageLookupByLibrary.simpleMessage("Ime"),
     "set_language_failed": MessageLookupByLibrary.simpleMessage(
@@ -55,10 +60,12 @@ class MessageLookup extends MessageLookupByLibrary {
       "Postavljanje načina teme nije uspjelo",
     ),
     "spanish": MessageLookupByLibrary.simpleMessage("Španjolski"),
+    "success": MessageLookupByLibrary.simpleMessage("Uspjeh"),
     "system": MessageLookupByLibrary.simpleMessage("Sustav"),
     "try_again": MessageLookupByLibrary.simpleMessage("Pokušajte ponovno"),
     "unknown_error_occurred": MessageLookupByLibrary.simpleMessage(
       "Došlo je do nepoznate greške",
     ),
+    "version": MessageLookupByLibrary.simpleMessage("Verzija"),
   };
 }

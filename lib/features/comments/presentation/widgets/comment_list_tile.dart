@@ -1,21 +1,24 @@
+import 'package:comments/common/domain/failure.dart';
 import 'package:comments/common/presentation/build_context_extensions.dart';
+import 'package:comments/common/presentation/toast_providers.dart';
 import 'package:comments/features/comments/domain/entities/comment.dart';
 import 'package:comments/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:q_ui_components/widgets/q_button.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class CommentListTile extends StatefulWidget {
+class CommentListTile extends ConsumerStatefulWidget {
   const CommentListTile({super.key, required this.comment});
 
   final Comment comment;
 
   @override
-  State<CommentListTile> createState() => _CommentListTileState();
+  ConsumerState<CommentListTile> createState() => _CommentListTileState();
 }
 
-class _CommentListTileState extends State<CommentListTile> {
+class _CommentListTileState extends ConsumerState<CommentListTile> {
   bool isExpanded = false;
 
   @override
@@ -105,6 +108,9 @@ class _CommentListTileState extends State<CommentListTile> {
     if (await canLaunchUrl(mailtoUri)) {
       await launchUrl(mailtoUri);
     } else {
+      ref
+          .read(failureProvider.notifier)
+          .update((state) => Failure(title: 'Could not open mail app.'));
       throw 'Could not launch $mailtoUri';
     }
   }

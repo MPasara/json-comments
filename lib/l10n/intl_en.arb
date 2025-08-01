@@ -22,5 +22,9 @@
     "set_theme_failed" : "Set theme mode failed",
     "change_theme" : "Change theme",
     "fetch_app_version_failed" : "'Fetch app version failed',",
-    "version" : "Version"
+    "version" : "Version",
+    "success" : "Success",
+    "error" : "Error",
+    "info" : "Info",
+    "comments_load_success" : "Comments loaded successfully"
 }

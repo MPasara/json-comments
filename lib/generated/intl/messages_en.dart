@@ -31,10 +31,14 @@ class MessageLookup extends MessageLookupByLibrary {
       "List appears to be empty",
     ),
     "comments": MessageLookupByLibrary.simpleMessage("Comments"),
+    "comments_load_success": MessageLookupByLibrary.simpleMessage(
+      "Comments loaded successfully",
+    ),
     "contact": MessageLookupByLibrary.simpleMessage("Contact"),
     "croatian": MessageLookupByLibrary.simpleMessage("Croatian"),
     "dark": MessageLookupByLibrary.simpleMessage("Dark"),
     "english": MessageLookupByLibrary.simpleMessage("English"),
+    "error": MessageLookupByLibrary.simpleMessage("Error"),
     "fetch_app_version_failed": MessageLookupByLibrary.simpleMessage(
       "\'Fetch app version failed\',",
     ),
@@ -46,6 +50,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Get comments failed...",
     ),
     "id": MessageLookupByLibrary.simpleMessage("ID"),
+    "info": MessageLookupByLibrary.simpleMessage("Info"),
     "light": MessageLookupByLibrary.simpleMessage("Light"),
     "name": MessageLookupByLibrary.simpleMessage("Name"),
     "set_language_failed": MessageLookupByLibrary.simpleMessage(
@@ -55,6 +60,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Set theme mode failed",
     ),
     "spanish": MessageLookupByLibrary.simpleMessage("Spanish"),
+    "success": MessageLookupByLibrary.simpleMessage("Success"),
     "system": MessageLookupByLibrary.simpleMessage("System"),
     "try_again": MessageLookupByLibrary.simpleMessage("Try again"),
     "unknown_error_occurred": MessageLookupByLibrary.simpleMessage(
