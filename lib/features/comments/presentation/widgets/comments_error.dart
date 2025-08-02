@@ -15,6 +15,12 @@ class CommentsErrorWidget extends ConsumerWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
+        Icon(
+          Icons.cloud_off_outlined,
+          color: context.appColors.primary,
+          size: 65,
+        ),
+        SizedBox(height: 10),
         Center(
           child: Text(
             failure.title,
@@ -22,7 +28,7 @@ class CommentsErrorWidget extends ConsumerWidget {
             textAlign: TextAlign.center,
           ),
         ),
-        const SizedBox.square(dimension: 14),
+        SizedBox(height: 20),
         ElevatedButton(
           onPressed: () {
             ref
