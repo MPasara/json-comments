@@ -26,5 +26,6 @@
     "success" : "Success",
     "error" : "Error",
     "info" : "Info",
-    "comments_load_success" : "Comments loaded successfully"
+    "comments_load_success" : "Comments loaded successfully",
+    "mail_app_error" : "Could not open mail app"
 }

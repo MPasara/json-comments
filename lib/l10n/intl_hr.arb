@@ -26,5 +26,6 @@
   "error": "Greška",
   "info": "Informacija",
   "version": "Verzija",
-  "comments_load_success": "Komentari uspješno učitani"
+  "comments_load_success": "Komentari uspješno učitani",
+  "mail_app_error" : "Nije moguće otvoriti aplikaciju za poštu"
 }

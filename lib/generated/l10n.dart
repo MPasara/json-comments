@@ -238,6 +238,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Could not open mail app`
+  String get mail_app_error {
+    return Intl.message(
+      'Could not open mail app',
+      name: 'mail_app_error',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -52,6 +52,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "id": MessageLookupByLibrary.simpleMessage("ID"),
     "info": MessageLookupByLibrary.simpleMessage("Informacija"),
     "light": MessageLookupByLibrary.simpleMessage("Svijetlo"),
+    "mail_app_error": MessageLookupByLibrary.simpleMessage(
+      "Nije moguće otvoriti aplikaciju za poštu",
+    ),
     "name": MessageLookupByLibrary.simpleMessage("Ime"),
     "set_language_failed": MessageLookupByLibrary.simpleMessage(
       "Postavljanje jezika nije uspjelo",

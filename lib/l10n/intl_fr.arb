@@ -26,5 +26,6 @@
   "error": "Erreur",
   "info": "Info",
   "version": "Version",
-  "comments_load_success": "Commentaires chargés avec succès"
+  "comments_load_success": "Commentaires chargés avec succès",
+  "mail_app_error" : "Impossible d'ouvrir l'application de messagerie"
 }

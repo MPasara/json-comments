@@ -52,6 +52,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "id": MessageLookupByLibrary.simpleMessage("ID"),
     "info": MessageLookupByLibrary.simpleMessage("Info"),
     "light": MessageLookupByLibrary.simpleMessage("Light"),
+    "mail_app_error": MessageLookupByLibrary.simpleMessage(
+      "Could not open mail app",
+    ),
     "name": MessageLookupByLibrary.simpleMessage("Name"),
     "set_language_failed": MessageLookupByLibrary.simpleMessage(
       "Set language failed",
