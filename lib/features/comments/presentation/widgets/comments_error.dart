@@ -15,7 +15,13 @@ class CommentsErrorWidget extends ConsumerWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Center(child: Text(failure.title, style: context.appTextStyles.error)),
+        Center(
+          child: Text(
+            failure.title,
+            style: context.appTextStyles.error,
+            textAlign: TextAlign.center,
+          ),
+        ),
         const SizedBox.square(dimension: 14),
         ElevatedButton(
           onPressed: () {
