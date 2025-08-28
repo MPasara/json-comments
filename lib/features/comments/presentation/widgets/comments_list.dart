@@ -29,7 +29,7 @@ class _CommentsListWidgetState extends ConsumerState<CommentsListWidget> {
   @override
   Widget build(BuildContext context) {
     return RefreshIndicator(
-      backgroundColor: context.appColors.background,
+      backgroundColor: context.appColors.commentTileColor,
       color: context.appColors.primary,
       onRefresh: () async {
         // Reset the memoizer when refreshing
