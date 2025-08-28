@@ -111,7 +111,6 @@ class _CommentListTileState extends ConsumerState<CommentListTile> {
       ref
           .read(failureProvider.notifier)
           .update((state) => Failure(title: S.of(context).mail_app_error));
-      throw 'Could not launch $mailtoUri';
     }
   }
 }
