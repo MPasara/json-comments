@@ -53,7 +53,12 @@ class _CommentListTileState extends ConsumerState<CommentListTile> {
             style: context.appTextStyles.regular,
           ),
         ),
-        title: Text(widget.comment.email, style: context.appTextStyles.bold),
+        title: Text(
+          widget.comment.email,
+          style: context.appTextStyles.bold,
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+        ),
         subtitle: Text(
           '${S.of(context).id} ${widget.comment.id}',
           style: const TextStyle(color: Colors.grey, fontSize: 14),

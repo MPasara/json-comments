@@ -27,6 +27,7 @@ class CommentsNotifier extends Notifier<CommentsState> {
       _currentStart = 0;
       state = const CommentsState.loading();
     }
+    await Future.delayed(Duration(seconds: 1));
 
     final eitherFailureOrComments = await _commentsRepository.getComments(
       limit: _limit,

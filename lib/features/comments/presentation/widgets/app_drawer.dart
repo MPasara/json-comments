@@ -27,9 +27,7 @@ class AppDrawer extends ConsumerWidget {
               Row(
                 children: [
                   IconButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
+                    onPressed: () => Navigator.pop(context),
                     icon: Icon(Icons.close, color: context.appColors.primary),
                   ),
                   Spacer(),

@@ -11,6 +11,7 @@ import 'package:comments/features/comments/presentation/widgets/comments_list.da
 import 'package:comments/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 
 class HomePage extends ConsumerStatefulWidget {
   const HomePage({super.key});
@@ -67,8 +68,11 @@ class _MyHomePageState extends ConsumerState<HomePage> {
       body: switch (state) {
         CommentsInitial() => const SizedBox(),
         CommentsEmpty() => CommentsEmptyListWidget(),
-        CommentsLoading() => const Center(
-          child: CircularProgressIndicator(color: Colors.purple),
+        CommentsLoading() => Center(
+          child: LoadingAnimationWidget.dotsTriangle(
+            color: context.appColors.secondary!,
+            size: 50,
+          ),
         ),
         CommentsError(:final failure) => CommentsErrorWidget(failure: failure),
         CommentsData(:final data, :final hasReachedMax, :final isLoadingMore) =>
