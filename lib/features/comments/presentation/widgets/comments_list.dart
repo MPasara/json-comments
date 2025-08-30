@@ -41,7 +41,7 @@ class _CommentsListWidgetState extends ConsumerState<CommentsListWidget> {
       child: NotificationListener<ScrollNotification>(
         onNotification: (ScrollNotification scrollInfo) {
           // Calculate 70% of scroll extent
-          final threshold = scrollInfo.metrics.maxScrollExtent * 0.7;
+          final threshold = scrollInfo.metrics.maxScrollExtent * 0.8;
 
           if (scrollInfo.metrics.pixels >= threshold) {
             if (!widget.hasReachedMax && !widget.isLoadingMore) {
@@ -50,9 +50,12 @@ class _CommentsListWidgetState extends ConsumerState<CommentsListWidget> {
           }
           return false;
         },
-        child: Scrollbar(
-          trackVisibility: true,
+        child: RawScrollbar(
+          interactive: true,
+          radius: Radius.circular(10),
+          thumbColor: context.appColors.secondary!.withValues(alpha: 0.65),
           child: ListView.builder(
+            primary: true,
             padding: const EdgeInsets.only(top: 10),
             physics: const AlwaysScrollableScrollPhysics(),
             itemCount: widget.comments.length + (widget.hasReachedMax ? 0 : 1),
