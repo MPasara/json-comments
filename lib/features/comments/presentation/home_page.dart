@@ -49,6 +49,11 @@ class _MyHomePageState extends ConsumerState<HomePage> {
         });
       }
     });
+    /* ref.listen(successToast, (previous, next) {
+      if (next is MutationSuccess && mounted) {
+        ToastService.showSuccess(context, next.value);
+      }
+    }); */
 
     return Scaffold(
       backgroundColor: context.appColors.background,

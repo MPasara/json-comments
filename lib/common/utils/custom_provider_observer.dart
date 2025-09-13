@@ -1,17 +1,16 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:loggy/loggy.dart';
 
-class CustomProviderObserver extends ProviderObserver {
+base class CustomProviderObserver extends ProviderObserver {
   @override
   void didUpdateProvider(
-    ProviderBase<Object?> provider,
+    ProviderObserverContext context,
     Object? previousValue,
     Object? newValue,
-    ProviderContainer container,
   ) {
     logDebug('''
 {
-  "provider": "${provider.name ?? provider.runtimeType}",
+  "provider": "${context.provider.name ?? context.provider.runtimeType}",
   "newValue": "$newValue"
 }''');
   }
